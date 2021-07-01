@@ -1,0 +1,10 @@
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.comment-form-title {
+  font-size: 1.5em;
+  padding: 5px;
+}

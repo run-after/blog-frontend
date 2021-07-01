@@ -1,0 +1,35 @@
+.post-form {
+  position: fixed;
+  padding: 50px;
+  left: 50%;
+  top: 130px;
+  transform: translate(-50%, 0);
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 10px;
+  background: rgb(20, 20, 20);
+  z-index: 100;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+.post-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post-form .published {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,33 @@
+.header {
+  background: rgb(20, 20, 20);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-size: 3em;
+  align-self: flex-end;
+}
+
+.header-btn {
+  align-self: flex-end;
+  margin: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+}
+
+.header-btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .header-title {
+    font-size: 2em;
+    padding-left: 10px;
+  }
+}
