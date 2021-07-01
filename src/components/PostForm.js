@@ -1,6 +1,6 @@
 import '../stylesheets/PostForm.css';
 import { useState } from 'react';
-const URL = 'http://localhost:3000';
+const URL = 'https://arctic-eh-68834.herokuapp.com';
 
 function PostForm(props) {
 
@@ -8,7 +8,7 @@ function PostForm(props) {
 
   const createPost = (e) => {
     e.preventDefault();
-    
+
     if (props.post) {
       const test = props.post;
       test.title = e.target.title.value;
@@ -33,12 +33,12 @@ function PostForm(props) {
             props.setPost({ 'data': test });
           };
         })
-        
+
       });
     } else {
       fetch(`${URL}/posts`, {
         method: 'POST',
-        body: JSON.stringify({ "title": e.target.title.value, "body": e.target.body.value, "published": e.target.published.checked}),
+        body: JSON.stringify({ "title": e.target.title.value, "body": e.target.body.value, "published": e.target.published.checked }),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -67,12 +67,12 @@ function PostForm(props) {
         return <p key={msg.msg}>{msg.msg}</p>
       })}
       <form onSubmit={createPost}>
-        <input type='text' id='title' name='title' required placeholder='title' defaultValue={props.post ? props.post.title : ''}/>
-        <textarea id='body' name='body' required placeholder='body' defaultValue={props.post ? props.post.body : ''}/>
+        <input type='text' id='title' name='title' required placeholder='title' defaultValue={props.post ? props.post.title : ''} />
+        <textarea id='body' name='body' required placeholder='body' defaultValue={props.post ? props.post.body : ''} />
         <div className='published'>
           <label htmlFor='published'>Publish?</label>
-          <input type='checkbox' name='published' defaultChecked={props.post ? props.post.published : false}/>
-        </div>      
+          <input type='checkbox' name='published' defaultChecked={props.post ? props.post.published : false} />
+        </div>
         <button>Create Post</button>
       </form>
     </div>

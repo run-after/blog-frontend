@@ -1,6 +1,6 @@
 import '../stylesheets/CommentForm.css';
 import { useState } from 'react';
-const URL = 'http://localhost:3000';
+const URL = 'https://arctic-eh-68834.herokuapp.com';
 
 function CommentForm(props) {
 
@@ -16,7 +16,7 @@ function CommentForm(props) {
     setCommentBodyValue(e.target.value)
   };
 
-   const createComment = (e) => {
+  const createComment = (e) => {
     e.preventDefault();
 
     fetch(`${URL}/posts/${props.post._id}/comments`, {
@@ -45,27 +45,27 @@ function CommentForm(props) {
   return (
     <form className='comment-form' onSubmit={createComment}>
       <h3 className='comment-form-title'>Write a comment...</h3>
-        {message && message.map((err) => {
-          return <p key={err.msg}>{err.msg}</p>
-        })}
-        <input
-          id='author'
-          name='author'
-          placeholder='Your name'
-          value={authorValue}
-          onChange={changeAuthorInput}
-          required
-        />
-        <textarea
-          id='body'
-          name='body'
-          placeholder='Comment'
-          value={commentBodyValue}
-          onChange={changeBodyInput}
-          required
-        />
-        <button>Submit</button>
-      </form>
+      {message && message.map((err) => {
+        return <p key={err.msg}>{err.msg}</p>
+      })}
+      <input
+        id='author'
+        name='author'
+        placeholder='Your name'
+        value={authorValue}
+        onChange={changeAuthorInput}
+        required
+      />
+      <textarea
+        id='body'
+        name='body'
+        placeholder='Comment'
+        value={commentBodyValue}
+        onChange={changeBodyInput}
+        required
+      />
+      <button>Submit</button>
+    </form>
   );
 };
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import PostForm from './PostForm';
 import Comment from './Comment';
 import CommentForm from './CommentForm';
-const URL = 'http://localhost:3000';
+const URL = 'https://arctic-eh-68834.herokuapp.com';
 
 const formatTime = (timeString) => {
   const time = new Date(timeString);
@@ -19,7 +19,7 @@ function Post(props) {
 
   const deletePost = (postID) => {
     const confirm = prompt('CONFIRM - Do you want to delete? Type yes to confirm');
-    
+
     if (confirm && confirm.toLowerCase() === 'yes') {
       fetch(`${URL}/posts/${postID}`, {
         method: 'DELETE',

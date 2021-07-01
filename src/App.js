@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Post from './components/Post';
 import PostForm from './components/PostForm';
-const URL = 'http://localhost:3000';
+const URL = 'https://arctic-eh-68834.herokuapp.com';
 
 function App() {
 
@@ -38,7 +38,7 @@ function App() {
     const temp = posts.data.filter(post => post._id !== postID);
     setPosts({ 'data': temp });
   };
-  
+
   useEffect(() => {
     // Fetch all blog posts and set state
     fetch(`${URL}/posts`).then((response) => {
@@ -69,14 +69,14 @@ function App() {
         // find a different method than map.. reduce?
         posts.data.map((post) => {
           if (post.published || loggedIn) {
-            return(
+            return (
               <Post key={post._id}
                 post={post}
                 loggedIn={loggedIn}
                 removePost={removePost}
                 setPosts={setPosts}
                 displayPostModal={displayPostModal}
-                displayPostForm={ displayPostForm}
+                displayPostForm={displayPostForm}
               />
             )
           };

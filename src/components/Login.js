@@ -1,6 +1,6 @@
 import '../stylesheets/Login.css';
 import { useState } from 'react';
-const URL = 'http://localhost:3000';
+const URL = 'https://arctic-eh-68834.herokuapp.com';
 
 function Login(props) {
 
@@ -38,8 +38,8 @@ function Login(props) {
       <button onClick={props.displayLoginModal} className='close-btn'>×</button>
       {message && <p>{message}</p>}
       <form onSubmit={login}>
-        <input id='username' name='username' type='text' placeholder='username'/>
-        <input id='password' name='password' type='password' placeholder='password'/>
+        <input id='username' name='username' type='text' placeholder='username' />
+        <input id='password' name='password' type='password' placeholder='password' />
         <button type='submit'>Submit</button>
       </form>
     </div>

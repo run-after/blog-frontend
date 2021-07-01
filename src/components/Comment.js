@@ -1,5 +1,5 @@
 import '../stylesheets/Comment.css';
-const URL = 'http://localhost:3000';
+const URL = 'https://arctic-eh-68834.herokuapp.com';
 
 const formatTime = (timeString) => {
   const time = new Date(timeString);
@@ -19,7 +19,7 @@ function Comment(props) {
         }
       }).then(() => {
         props.removeComment(commentID);
-      }); 
+      });
     };
   };
 
